@@ -1,19 +1,29 @@
-import java.util.Scanner;
+import java.util.*;
+
 
 public class MoodAnalyser {
-    static Scanner scanner = new Scanner(System.in);
+    List<String> list = new ArrayList<>();
+    String sad1 = "Sad";
+    String sad2 = "sad";
+
     public static void main(String[] args) {
         MoodAnalyser moodAnalyser = new MoodAnalyser();
-        System.out.println("Enter Message:");
-        String message = scanner.nextLine();
-        System.out.println(moodAnalyser.analyseMood(message));
-
+        System.out.println("Welcome to MoodAnalyser:");
+        String str = "I am in any mood";
+        System.out.println(str);
+        System.out.println(moodAnalyser.analyseMood(str));
     }
 
-    private String analyseMood(String message) {
-        String str = "Sad";
-        if (str== message)
-            return str;
-        else return message;
+    private String analyseMood(String str) {
+        String find = "sad";
+        String mood = null;
+        int i = str.indexOf(find);
+        if(i>0) {
+            mood = find;
+        }
+        else {
+            mood = "Happy";
+        }
+        return mood;
     }
 }
