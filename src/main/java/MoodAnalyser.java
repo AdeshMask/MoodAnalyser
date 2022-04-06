@@ -8,11 +8,15 @@ public class MoodAnalyser {
         this.message = message;
         }
     public  String analyseMood() {
-        if(this.message.toLowerCase().contains("sad")) {
-            return "sad";
-        }
-        else {
-            return  "Happy";
+        try {
+            if(this.message.toLowerCase().contains("sad")) {
+                return "sad";
+            }
+            else {
+                return  "Happy";
+            }
+        } catch (NullPointerException e) {
+                return null;
         }
     }
 }

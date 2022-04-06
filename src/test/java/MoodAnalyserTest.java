@@ -26,4 +26,13 @@ public class MoodAnalyserTest {
         String expected = "Happy";
         Assert.assertEquals(expected,result);
     }
+
+    @Test
+    public void givenNull_ReturnInvalid() {
+        MoodAnalyser moodAnalyser = new MoodAnalyser(null);
+        String result = moodAnalyser.analyseMood();
+        String expected = null;
+        Assert.assertEquals(expected,result);
+
+    }
 }
