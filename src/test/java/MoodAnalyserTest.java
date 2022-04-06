@@ -13,10 +13,17 @@ public class MoodAnalyserTest {
     }
 
     @Test
-    public void analyseMood() {
+    public void givenSad_ReturnSad() {
         MoodAnalyser moodAnalyser = new MoodAnalyser("I am in sad mood");
         String result = moodAnalyser.analyseMood();
         String expected = "sad";
+        Assert.assertEquals(expected,result);
+    }
+    @Test
+    public void givenAny_ReturnHappy() {
+        MoodAnalyser moodAnalyser = new MoodAnalyser("I am in any mood");
+        String result = moodAnalyser.analyseMood();
+        String expected = "Happy";
         Assert.assertEquals(expected,result);
     }
 }
